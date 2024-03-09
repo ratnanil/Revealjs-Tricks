@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="revealjs/dist/reset.css">
+	<link rel="stylesheet" href="revealjs/dist/reveal.css">
+	<link rel="stylesheet" href="revealjs/dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
+
+    <style>
+        .one{
+            padding: 1.5em; 
+            background: salmon;
+        }
+        .two{
+            padding: 1em; 
+            background: pink;
+        }
+
+        .three{
+            padding: .5em; 
+            background: indigo;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section data-auto-animate>
+                <p class="one">one</p>
+                <p class="two">two</p>
+                <p class="three">three</p>    
+			</section>
+
+			<section data-auto-animate>
+                <!-- wrap in div, use r-hstack class -->
+                <!-- flexbox style! -->
+               <div class="r-hstack">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div>   
+            </section>
+
+            <section data-auto-animate>
+                <!-- justify-center is default -->
+                <div class="r-hstack justify-start">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+
+            <section data-auto-animate>
+                <!-- justify-center is default -->
+                <div class="r-hstack justify-end">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <!-- justify-center is default -->
+                <div class="r-hstack justify-around">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <!-- justify-center is default -->
+                <div class="r-hstack justify-between">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <!-- items-center is default -->
+                <div class="r-hstack items-start">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <!-- items-center is default -->
+                <div class="r-hstack items-end">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <!-- items-center is default -->
+                <div class="r-hstack items-stretch">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+
+
+
+		</div>
+	</div>
+
+	<script src="revealjs/dist/reveal.js"></script>
+	<script src="revealjs/plugin/notes/notes.js"></script>
+	<script src="revealjs/plugin/markdown/markdown.js"></script>
+	<script src="revealjs/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
