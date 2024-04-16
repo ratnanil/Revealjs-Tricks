@@ -172,9 +172,33 @@ function handleClick(e) {
 ```
 
 
-## Misc
+## Code
 
-### Decker
+Codeblocks are wrapped in `pre` and `code` like so:
+
+    <pre>
+      <code>
+        print("hi")
+      </code>
+    </pre>
+
+
+The `<code>`elements accepts the following attributes:
+
+- `data-trim`: trim all white spaces before the code (helpful for indeted code in html files)
+- `data-noescape`: Don't escape html (see note below)
+- `data-line-numbers`: show line numbers.
+- `data-ln-start-from="7"`: Offset the line numbers by 7
+- `data-line-numbers="3,8-10"`: Highlight these line numbers sequencially
+- `class="js"`: Set's the syntax highlighting to javascript. See [supported languages](https://highlightjs.readthedocs.io/en/latest/supported-languages.html)
+
+
+Note: `data-noescape` does not seem to escape `<>`. In this case:
+
+> Content added inside of a <code> block is parsed as HTML by the web browser. If you have HTML characters (<>) in your code you will need to escape them ($lt; $gt;).
+> To avoid having to escape these characters manually, you can wrap your code in <script type="text/template"> and we'll handle it for you.
+
+## Decker
 
 https://github.com/mbotsch/mb-reveal-plugins/issues/7
 
