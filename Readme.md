@@ -188,7 +188,7 @@ The `<code>`elements accepts the following attributes:
 - `data-line-numbers`: show line numbers.
 - `data-ln-start-from="7"`: Offset the line numbers by 7
 - `data-line-numbers="3,8-10"`: Highlight these line numbers sequencially
-- `class="js"`: Set's the syntax highlighting to javascript. See [supported languages](https://highlightjs.readthedocs.io/en/latest/supported-languages.html)
+- `class="js"`: Set's the syntax highlighting to javascript. See [supported languages](https://highlightjs.readthedocs.io/en/latest/supported-languages.html). Eg. Plaintext` (plaintext, txt, text), `R`, `Python`, `CSS`
 
 
 Note: `data-noescape` does not seem to escape `<>`. In this case:
