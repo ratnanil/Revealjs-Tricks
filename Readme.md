@@ -187,6 +187,11 @@ https://github.com/mbotsch/mb-reveal-plugins/issues/7
 ## Header / Footer
 
 - For a footer only on a single slide, try this: https://github.com/hakimel/reveal.js/issues/180#issuecomment-1140166635
+- For a header / footer on every page, add something like this *after* the `div` with the class `reveal` and *before* the `script` tags
+
+      <div style="top: 10px; left: 10px; position: absolute;">
+		<img src="images/zhaw_sw_neg.png" style="height: 40px;">
+	  </div>
 
 ## Plugins
 
