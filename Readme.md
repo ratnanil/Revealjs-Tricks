@@ -276,7 +276,7 @@ See: https://revealjs.com/config/
 
 You can set config options within `Reveal.initialize({})`.
 
-```html
+```js
 Reveal.initialize({
 		hash: true
 	})
@@ -284,7 +284,7 @@ Reveal.initialize({
 
 You can change the config at runtime. Try running this in the console:
 
-```html
+```js
 Reveal.configure({hash: true})
 ```
 
