@@ -5,11 +5,13 @@
 
 1. Browse fonts on https://fonts.google.com/
 2. Find the font on https://gwfh.mranftl.com/fonts and download the font
+3. Add the following to the css file:
 
-
+   ```css
     body .reveal {
         font-family: "Yanone Kaffeesatz", "normal";
     }
+    ```
 
 
 
@@ -42,7 +44,9 @@ To selectivly blur background images, add the following to your custom css:
 }
 ```
 
-If you now apply the class `.blurred` to a revealjs slide, the background image of this slide is blurred. Using revealjs natively (see [here](https://github.com/ratnanil/zhaw-statistiker-2022/blob/4d04aa613f3f5af0806b9c94ad1c924ce3a73bfc/index.html#L148):
+If you now apply the class `.blurred` to a revealjs slide, the background image of this slide is blurred. 
+
+Using revealjs natively (see [here](https://github.com/ratnanil/zhaw-statistiker-2022/blob/4d04aa613f3f5af0806b9c94ad1c924ce3a73bfc/index.html#L148)):
 
 ```html
 <section class="blurred" data-background-image="5790836212_87a89fe3b9_o.jpg">
@@ -101,11 +105,14 @@ In the slides-html
 </section>
 ``` 
 
-- The padding-top ~~trick is from [here](https://stackoverflow.com/a/43806724/4139249) (But rather than using an `<img>`, I'm using a background image)~~: $\text{padding-top} = \frac{\text{img width in px}}{\text{img height in px}}\times \text{width of div} = \frac{1055px}{1920px} \times 0.8 = 43.95$
+- The padding-top ~~trick is from [here](https://stackoverflow.com/a/43806724/4139249) (But rather than using an `<img>`, I'm using a background image)~~: 
+
+$$\text{padding-top} = \frac{\text{img width in px}}{\text{img height in px}}\times \text{width of div} = \frac{1055px}{1920px} \times 0.8 = 43.95$$
+
 - This seems to work fine also in the mobile version
 - Note `viewBox=0 0 1000 1000`
   - this specifies the coordinate system for the svg image (a "canvas" with 1000 units with and height)
-  - this makes the svg canvas as high as it is wide. Usually, this means the svg canvas is longer than the image, which is finde sice the coordinates start (0/0) in the top left corner
+  - this makes the svg "canvas" as high as it is wide. Usually, this means the svg canvas is longer than the image, which is fine since the coordinates start (0/0) in the top left corner
 
 
 
@@ -160,7 +167,7 @@ https://www.raymondcamden.com/2012/10/20/Adding-mouse-click-navigation-to-reveal
 > 
 > Finally, the actual event handler is somewhat trivial. You check which button was clicked and then use the Reveal API to go either forward or backward. (The Logitech app supports a center mouse button too. You could bind that to the overview feature, which shows you all the slides.)
 
-```
+```js
 window.addEventListener("mousedown", handleClick, false);
 window.addEventListener("contextmenu", function (e) { e.preventDefault(); }, false);
 
@@ -176,14 +183,15 @@ function handleClick(e) {
 
 Codeblocks are wrapped in `pre` and `code` like so:
 
-    <pre><code>
-        print("hi")
-    </code></pre>
-
+```html
+<pre><code>
+    print("hi")
+</code></pre>
+```
 
 The `<code>`elements accepts the following attributes:
 
-- `data-trim`: trim all white spaces before the code (helpful for indeted code in html files)
+- `data-trim`: trim all white spaces before the code (helpful for indented code in html files)
 - `data-noescape`: Don't escape html (see note below)
 - `data-line-numbers`: show line numbers.
 - `data-ln-start-from="7"`: Offset the line numbers by 7
@@ -193,8 +201,8 @@ The `<code>`elements accepts the following attributes:
 
 Note: `data-noescape` does not seem to escape `<>`. In this case:
 
-> Content added inside of a <code> block is parsed as HTML by the web browser. If you have HTML characters (<>) in your code you will need to escape them ($lt; $gt;).
-> To avoid having to escape these characters manually, you can wrap your code in <script type="text/template"> and we'll handle it for you.
+> Content added inside of a `<code>` block is parsed as HTML by the web browser. If you have HTML characters (<>) in your code you will need to escape them ($lt; $gt;).
+> To avoid having to escape these characters manually, you can wrap your code in `<script type="text/template">` and we'll handle it for you.
 
 ## Decker
 
@@ -209,12 +217,103 @@ https://github.com/mbotsch/mb-reveal-plugins/issues/7
 ## Header / Footer
 
 - For a footer only on a single slide, try this: https://github.com/hakimel/reveal.js/issues/180#issuecomment-1140166635
-- For a header / footer on every page, add something like this *after* the `div` with the class `reveal` and *before* the `script` tags
-  ```
+- For a header / footer on every page, add something like this *after* the `<div class="reveal"></div>` and *before* `<script> ... </script>`
+  ```html
   <div style="top: 10px; left: 10px; position: absolute;">
     <img src="images/zhaw_sw_neg.png" style="height: 40px;">
   </div>
   ```
+
+Todo: This often does not scale well with low resolution beamers. Test this!
+
+
+
+
+## Slides
+
+### Name Slides / Link to Slides
+
+
+Add an `id` attribute to a section:
+
+```html
+<section id="my-id">
+
+</section>
+```
+
+Which can be linked like this:
+
+```html
+<a href="#/my-id">Go to "my-id"-Slide</a>
+
+<a href="#/0">Go to the first slide</a>
+```
+
+
+### Hide Slides
+
+hide slide with `data-visibility` attribute
+
+```html
+<section data-visibility="hidden"></section>
+```
+
+`uncounted` if it should not appear in the couter:
+
+```html
+<section data-visibility="uncounted"></section>
+```
+
+
+## Config Options
+
+
+<section>
+
+See: https://revealjs.com/config/
+
+
+You can set config options within `Reveal.initialize({})`.
+
+```html
+Reveal.initialize({
+		hash: true
+	})
+```
+
+You can change the config at runtime. Try running this in the console:
+
+```html
+Reveal.configure({hash: true})
+```
+
+You cat get the current state of options. Try running this in the console:
+
+```js
+Reveal.getConfig() // or
+Reveal.getConfig()["hash"] // or
+Reveal.getConfig().hash
+```
+
+Toggle!
+
+```js
+Reveal.configure({ controls: !Reveal.getConfig.controls})
+```
+
+Set configurations via query strings:
+
+```js
+mysite.com/myslides?controls=true&progress=false						
+```
+
+<!-- 
+	https://app.gumroad.com/s/19143d47ed0764a4b30ab6141678b334/M2q2Z8Ec_vTZgcP-Zy5JPA== 
+-->
+
+
+
 
 ## Plugins
 
