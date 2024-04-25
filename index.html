@@ -14,6 +14,12 @@
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
 
+	<style>
+		.make-it-pop {
+  			filter: drop-shadow(0 0 10px purple);
+		}
+	</style>
+
 
 </head>
 
@@ -21,9 +27,10 @@
 	<div class="reveal">
 		<div class="slides">
 
-			<section>
+			<section></section>
 
-				
+			<section data-state="make-it-pop">
+				yeah
 			</section>
 
 		</div>
@@ -43,6 +50,13 @@
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
+
+		var i;
+		i = 1;
+
+		Reveal.on( 'make-it-pop', () => {
+  			console.log(i++);
+		} );
 	</script>
 </body>
 

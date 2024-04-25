@@ -227,6 +227,23 @@ https://github.com/mbotsch/mb-reveal-plugins/issues/7
 Todo: This often does not scale well with low resolution beamers. Test this!
 
 
+## Markdown
+
+
+### External Markdown
+
+If you write your presentation primarily in markdown (but not using quarto), you can use external markdown:
+
+
+```html
+<section> data-markdown="external.md" data-seperator=">>>" data-seperator-vertical="---"
+```
+
+- `data-markdown`: Name of the external file
+- `data-seperator`: A regex of the seperator to use for seperating slides (what's the default?)
+  - If you hat `$$$` literally as you seperator, you would have to escape them (`\$\$\$`)
+- `data-seperator-vertical`: A regex of the seperator to use for seperating *vertical* slides (what's the default?)
+- `data-seperator-notes`: A seperator for speaker notes:
 
 
 ## Slides
@@ -263,6 +280,35 @@ hide slide with `data-visibility` attribute
 
 ```html
 <section data-visibility="uncounted"></section>
+```
+
+
+### Slide state
+
+`data-state` can be used as an attribute of a slide (`<section>`) to "activate" a state when that slide is visible. This has some cool implications, but I'm not sure how to implement them yet. This is a minimal example:
+
+```htm
+<section data-state="make-it-pop">
+    This slide has a state `make-it-pop`, but only when it's visible (?)
+</section>
+```
+
+The slide (and all its children?) get the class `make-it-pop`. This would be a great place to add an animation, right?
+```css
+.make-it-pop {
+  filter: drop-shadow(0 0 10px purple);
+}
+```
+
+More importantly, `make-it-pop` and be an event trigger in JS. I made [the example on the website](https://revealjs.com/markup/#slide-states) slightly more complicated just to highlight that the event is triggered *every time* the specific slide is made visible:
+
+```js
+var i;
+i = 1;
+
+Reveal.on('make-it-pop', () => {
+		console.log(i++);
+} );
 ```
 
 

@@ -36,14 +36,43 @@
 	<div class="reveal">
 		<div class="slides">
 
+            <section>
+                <pre><code data-trim class="html">
+                    <div>
+                        <p class="one">one</p>
+                        <p class="two">two</p>
+                        <p class="three">three</p>
+                   </div>  
+                </code></pre>
+                <pre><code data-trim class="css">
+                    .one{
+                        padding: 1.5em; 
+                        background: salmon;
+                    }
+                    
+                    .two{
+                        padding: 1em; 
+                        background: pink;
+                    }
+            
+                    .three{
+                        padding: .5em; 
+                        background: indigo;
+                    }
+                </code></pre>
+            </section>
+
 			<section data-auto-animate>
-                <p class="one">one</p>
-                <p class="two">two</p>
-                <p class="three">three</p>      
+                <h2>no class</h2>
+                <div>
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div>      
 			</section>
 
 			<section data-auto-animate>
-                <!-- wrap in div, use r-hstack class -->
+                <h2>r-hstack</h2>
                 <!-- flexbox style! -->
                <div class="r-hstack">
                     <p class="one">one</p>
@@ -53,7 +82,11 @@
             </section>
 
             <section data-auto-animate>
-                <!-- justify-center is default -->
+                <h2>r-hstack, justify-start</h2>
+
+                <p>justify-center is default</p>
+
+                
                 <div class="r-hstack justify-start">
                     <p class="one">one</p>
                     <p class="two">two</p>
@@ -62,7 +95,9 @@
             </section>
 
             <section data-auto-animate>
-                <!-- justify-center is default -->
+                <h2>r-hstack, justify-end</h2>
+                <p>justify-center is default</p>
+
                 <div class="r-hstack justify-end">
                     <p class="one">one</p>
                     <p class="two">two</p>
@@ -70,7 +105,9 @@
                </div> 
             </section>
             <section data-auto-animate>
-                <!-- justify-center is default -->
+                <h2>r-hstack, justify-around</h2>
+                <p>justify-center is default</p>
+
                 <div class="r-hstack justify-around">
                     <p class="one">one</p>
                     <p class="two">two</p>
@@ -78,7 +115,8 @@
                </div> 
             </section>
             <section data-auto-animate>
-                <!-- justify-center is default -->
+                <h2>r-hstack, justify-between</h2>
+                <p>justify-center is default</p>
                 <div class="r-hstack justify-between">
                     <p class="one">one</p>
                     <p class="two">two</p>
@@ -86,7 +124,8 @@
                </div> 
             </section>
             <section data-auto-animate>
-                <!-- items-center is default -->
+                <h2>r-hstack, items-start</h2>
+                <p>items-center is default</p>
                 <div class="r-hstack items-start">
                     <p class="one">one</p>
                     <p class="two">two</p>
@@ -94,7 +133,8 @@
                </div> 
             </section>
             <section data-auto-animate>
-                <!-- items-center is default -->
+                <h2>r-hstack, items-end</h2>
+                <p>items-center is default</p>
                 <div class="r-hstack items-end">
                     <p class="one">one</p>
                     <p class="two">two</p>
@@ -102,7 +142,8 @@
                </div> 
             </section>
             <section data-auto-animate>
-                <!-- items-center is default -->
+                <h2>r-hstack, items-stretch</h2>
+                <p>items-center is default</p>
                 <div class="r-hstack items-stretch">
                     <p class="one">one</p>
                     <p class="two">two</p>
@@ -115,6 +156,8 @@
 		</div>
 	</div>
 
+   
+
 	<script src="revealjs/dist/reveal.js"></script>
 	<script src="revealjs/plugin/notes/notes.js"></script>
 	<script src="revealjs/plugin/markdown/markdown.js"></script>
@@ -125,6 +168,7 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
+            loop: true,
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
