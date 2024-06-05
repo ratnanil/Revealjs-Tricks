@@ -361,8 +361,7 @@ mysite.com/myslides?controls=true&progress=false
 
 ## Help overlay
 
-Config Option: help: true`
-Should be active by default, via the `?` Key
+Config Option: `help: true`, should be active by default, via the `?` Key
 
 
 ## Plugins
