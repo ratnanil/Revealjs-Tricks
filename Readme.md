@@ -359,10 +359,21 @@ mysite.com/myslides?controls=true&progress=false
 -->
 
 
+## Help overlay
+
+Config Option: help: true`
+Should be active by default, via the `?` Key
 
 
 ## Plugins
 
+- The search pluigin is very helpful (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>)
+      
+      <script src="revealjs/plugin/search/search.js"></script>
+
+      Reveal.initialize({
+			plugins: [RevealSearch]
+		});
 
 - [reveal.js-notes-pointer](https://github.com/djsutherland/reveal.js-notes-pointer): A laser pointer usable in the speaker mode
   - see example http://www.ratnaweera.xyz/reveal.js-notes-pointer/example.html
