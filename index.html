@@ -14,12 +14,21 @@
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
 
-	<style>
-		.make-it-pop {
-  			filter: drop-shadow(0 0 10px purple);
-		}
-	</style>
+    <style>
+        .one{
+            padding: 1.5em; 
+            background: salmon;
+        }
+        .two{
+            padding: 1em; 
+            background: pink;
+        }
 
+        .three{
+            padding: .5em; 
+            background: indigo;
+        }
+    </style>
 
 </head>
 
@@ -27,14 +36,109 @@
 	<div class="reveal">
 		<div class="slides">
 
-			<section></section>
+            <section>
+                <ul>
+                    <li><a href="/fragments.html">Fragments</a></li>
+                    <li><a href="/layout.html">Layout</a></li>
+                    <li><a href="/make-it-pop.html">make-it-pop</a></li>
+                </ul>
+            </section>
 
-			<section data-state="make-it-pop">
-				yeah
+			<section data-auto-animate>
+                <h2>no class</h2>
+                <div>
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div>      
 			</section>
+
+			<section data-auto-animate>
+                <h2>r-hstack</h2>
+                <!-- flexbox style! -->
+               <div class="r-hstack">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div>   
+            </section>
+
+            <section data-auto-animate>
+                <h2>r-hstack, justify-start</h2>
+
+                <p>justify-center is default</p>
+
+                
+                <div class="r-hstack justify-start">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+
+            <section data-auto-animate>
+                <h2>r-hstack, justify-end</h2>
+                <p>justify-center is default</p>
+
+                <div class="r-hstack justify-end">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <h2>r-hstack, justify-around</h2>
+                <p>justify-center is default</p>
+
+                <div class="r-hstack justify-around">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <h2>r-hstack, justify-between</h2>
+                <p>justify-center is default</p>
+                <div class="r-hstack justify-between">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <h2>r-hstack, items-start</h2>
+                <p>items-center is default</p>
+                <div class="r-hstack items-start">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <h2>r-hstack, items-end</h2>
+                <p>items-center is default</p>
+                <div class="r-hstack items-end">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+            <section data-auto-animate>
+                <h2>r-hstack, items-stretch</h2>
+                <p>items-center is default</p>
+                <div class="r-hstack items-stretch">
+                    <p class="one">one</p>
+                    <p class="two">two</p>
+                    <p class="three">three</p>
+               </div> 
+            </section>
+
+
 
 		</div>
 	</div>
+
+   
 
 	<script src="revealjs/dist/reveal.js"></script>
 	<script src="revealjs/plugin/notes/notes.js"></script>
@@ -46,17 +150,11 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
+            loop: true,
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
-
-		var i;
-		i = 1;
-
-		Reveal.on( 'make-it-pop', () => {
-  			console.log(i++);
-		} );
 	</script>
 </body>
 

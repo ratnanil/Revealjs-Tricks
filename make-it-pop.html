@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="revealjs/dist/reset.css">
+	<link rel="stylesheet" href="revealjs/dist/reveal.css">
+	<link rel="stylesheet" href="revealjs/dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
+
+	<style>
+		.make-it-pop {
+  			filter: drop-shadow(0 0 10px purple);
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section></section>
+
+			<section data-state="make-it-pop">
+				yeah
+			</section>
+
+		</div>
+	</div>
+
+	<script src="revealjs/dist/reveal.js"></script>
+	<script>
+
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: []
+		});
+
+		var i;
+		i = 1;
+
+		Reveal.on( 'make-it-pop', () => {
+  			console.log(i++);
+		} );
+	</script>
+</body>
+
+</html>
