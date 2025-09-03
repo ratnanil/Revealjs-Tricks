@@ -1,4 +1,23 @@
 
+## Size and Scale
+
+WIP: I'm trying to wrap my head around size / scale of a revealjs presentation. I often prepare / test my presentation locally on my laptop, and when I present it everything is totally off. 
+
+(some infos taken from the gumroad video *Presentation Size & Scale*)
+
+- Scale and Resolution defines size
+- Revealjs runs on any display size and resolution.
+  - It scales the content uniformly until it fits the given display size (alternative: responsive approach with reflow).
+  - It does this to look the same on any presentation
+  - Backgrounds are not scaled (recommended to use extensively)
+ - **Note! Slide controls (backwards / forwards) are NOT scaled. I think this is what usually throws me off.**
+- The default width and height is 960 x 700
+  - this seems like a low resolution. Revealjs scales up content in a lossless way.
+  - The resolution is the "authored at" size. If you make this larger, content is possibly scaled down, which makes text smaller.
+- `margin` is `0.04` by default, which is 4% of the browser window. 
+
+
+
 ## Fonts
 
 ### Google Fonts locally
@@ -17,7 +36,7 @@
 
 
 
-## Getting started
+## Getting started / install Revealjs as a `git submodule`
 
 To get started with revealjs, do the following steps:
 
