@@ -27,6 +27,20 @@ With quarto, I have the possibility to set a slide logo. I can make this (somewh
 ```
 
 
+## Invert / change colors based on background color
+
+I have slides with a css class `.zwischentitel`. In the css, i specified a dark background color for these slides (`#40666e`). The font color is automatically changed by revealjs, the slides gets the css class `.has-dark-background`. 
+
+I wanted to use the css class `.zwischentitel` to change my logo for a negative version Turns out, no parent of my `.slide-log` has this class, but it a parent does have the class `.has-dark-background`. I can use this to change my logo
+
+I dont even have to provide a negative version of the logo. I can just simply make it dark and then invert it like so:
+
+```css
+.has-dark-background .slide-logo{
+  filter: brightness(0) invert(1);
+}
+```
+
 
 ## Fonts
 
