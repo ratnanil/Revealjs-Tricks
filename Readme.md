@@ -10,11 +10,21 @@ WIP: I'm trying to wrap my head around size / scale of a revealjs presentation. 
   - It scales the content uniformly until it fits the given display size (alternative: responsive approach with reflow).
   - It does this to look the same on any presentation
   - Backgrounds are not scaled (recommended to use extensively)
- - **Note! Slide controls (backwards / forwards) are NOT scaled. I think this is what usually throws me off.**
+ - **Note! Slide controls (backwards / forwards) are NOT scaled. I think this is what usually throws me off.** See a solution below
 - The default width and height is 960 x 700
   - this seems like a low resolution. Revealjs scales up content in a lossless way.
   - The resolution is the "authored at" size. If you make this larger, content is possibly scaled down, which makes text smaller.
 - `margin` is `0.04` by default, which is 4% of the browser window. 
+
+
+With quarto, I have the possibility to set a slide logo. I can make this (somewhat) flexible to the display by setting:
+
+```css
+.reveal .slide-logo{
+  max-height: min(10vh, 10vw) !important;
+}
+
+```
 
 
 
