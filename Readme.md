@@ -1,4 +1,11 @@
 
+## Create pdfs
+
+from the commandline: [decktapbe](https://github.com/astefanutti/decktape)
+
+
+
+
 ## Size and Scale
 
 WIP: I'm trying to wrap my head around size / scale of a revealjs presentation. I often prepare / test my presentation locally on my laptop, and when I present it everything is totally off. 
