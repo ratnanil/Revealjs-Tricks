@@ -3,6 +3,7 @@
 
 from the commandline: [decktapbe](https://github.com/astefanutti/decktape)
 
+see [decktape-quarto-recursive.sh](https://gist.github.com/ratnanil/fa3c30045e0f47761ee82993d53ea7c9) (which i installed globally)
 
 
 
